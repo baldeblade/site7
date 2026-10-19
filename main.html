@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXUS // Fitness OS 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Фоновая сетка и свечение -->
+<div class="bg-grid"></div>
+<div class="glow glow--cyan"></div>
+<div class="glow glow--purple"></div>
+
+<!-- Плавающее меню (Glass Dock) -->
+<nav class="dock">
+  <a href="#home" class="dock__item active">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+    <span>База</span>
+  </a>
+  <a href="#dashboard" class="dock__item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+    <span>Протокол</span>
+  </a>
+  <a href="#vitals" class="dock__item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+    <span>Витал</span>
+  </a>
+  <a href="#pass" class="dock__item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+    <span>Доступ</span>
+  </a>
+  <a href="#auth" class="dock__item" id="dock-profile-btn" onclick="openAuthOrProfile(event)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+    <span>Кабинет</span>
+  </a>
+</nav>
+
+<main>
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="container hero__inner">
+      <div class="status-badge">
+        <span class="dot"></span> SYSTEM ONLINE // SEASON 2026
+      </div>
+      <h1 class="hero__title">
+        ПЕРЕПРОГРАММИРУЙ<br>
+        СВОЁ <span class="text-gradient">ТЕЛО</span>
+      </h1>
+      <p class="hero__text">
+        NEXUS — это не просто фитнес-зал. Это операционная система для твоего организма. Биометрия, умные протоколы тренировок и полный контроль восстановления.
+      </p>
+      <div class="hero__actions">
+        <a href="#dashboard" class="btn btn--primary">Запустить систему</a>
+        <a href="#vitals" class="btn btn--glass">Смотреть метрики</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ДАШБОРД И РАСПИСАНИЕ (Productivity) -->
+  <section id="dashboard" class="section">
+    <div class="container">
+      <div class="section__header">
+        <div class="section__tag">[ 01 // PROTOCOL ]</div>
+        <h2 class="section__title">Твой график на неделю</h2>
+      </div>
+
+      <div class="tabs">
+        <input type="radio" name="day" id="d1" checked>
+        <input type="radio" name="day" id="d2">
+        <input type="radio" name="day" id="d3">
+        <input type="radio" name="day" id="d4">
+        <input type="radio" name="day" id="d5">
+
+        <div class="tabs__nav">
+          <label for="d1"><span>ПН</span><small>12 Окт</small></label>
+          <label for="d2"><span>ВТ</span><small>13 Окт</small></label>
+          <label for="d3"><span>СР</span><small>14 Окт</small></label>
+          <label for="d4"><span>ЧТ</span><small>15 Окт</small></label>
+          <label for="d5"><span>ПТ</span><small>16 Окт</small></label>
+        </div>
+
+        <div class="tabs__content">
+          <!-- День 1 -->
+          <div class="panel">
+            <div class="card">
+              <div class="card__time">07:00</div>
+              <div class="card__info"><h3>Силовой блок: Низ</h3><p>Алексей К. · Зона 1</p></div>
+              <div class="card__status status--go">Записаться</div>
+            </div>
+            <div class="card">
+              <div class="card__time">12:30</div>
+              <div class="card__info"><h3>Йога & Нейромышечный контроль</h3><p>Мария Л. · Зона 2</p></div>
+              <div class="card__status status--full">Мест нет</div></div>
+            <div class="card">
+              <div class="card__time">19:00</div>
+              <div class="card__info"><h3>HIT: Кардио-разгон</h3><p>Дмитрий О. · Зона 3</p></div>
+              <div class="card__status status--go">Записаться</div>
+            </div>
+          </div>
+          <!-- День 2 -->
+          <div class="panel">
+            <div class="card">
+              <div class="card__time">08:00</div>
+              <div class="card__info"><h3>Кардио-микс</h3><p>Анна С. · Зона 2</p></div>
+              <div class="card__status status--go">Записаться</div>
+            </div>
+            <div class="card">
+              <div class="card__time">18:00</div>
+              <div class="card__info"><h3>Бокс</h3><p>Игорь В. · Ринг</p></div>
+              <div class="card__status status--go">Записаться</div>
+            </div>
+          </div>
+          <!-- День 3 -->
+          <div class="panel">
+            <div class="card">
+              <div class="card__time">07:00</div>
+              <div class="card__info"><h3>Функциональный тренинг</h3><p>Дмитрий О. · Зона 1</p></div>
+              <div class="card__status status--go">Записаться</div>
+            </div>
+            <div class="card">
+              <div class="card__time">13:00</div>
+              <div class="card__info"><h3>Пилатес</h3><p>Мария Л. · Студия</p></div>
+              <div class="card__status status--go">Записаться</div>
+            </div>
+          </div>
+          <!-- День 4 -->
+          <div class="panel">
+            <div class="card">
+              <div class="card__time">08:00</div>
+              <div class="card__info"><h3>Растяжка</h3><p>Анна С. · Студия</p></div>
+              <div class="card__status status--go">Записаться</div>
+            </div>
+          </div>
+          <!-- День 5 -->
+          <div class="panel">
+            <div class="card">
+              <div class="card__time">07:00</div>
+              <div class="card__info"><h3>Кардио-микс</h3><p>Анна С. · Зона 2</p></div>
+              <div class="card__status status--go">Записаться</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- VITALS (Технологии / Датчики) -->
+  <section id="vitals" class="section section--dark">
+    <div class="container">
+      <div class="section__header">
+        <div class="section__tag">[ 02 // BIOMETRICS ]</div>
+        <h2 class="section__title">Умное отслеживание</h2>
+      </div>
+      <div class="vitals-grid">
+        <div class="vital-card">
+          <div class="vital-card__icon">❤️</div>
+          <div class="vital-card__data">
+            <span class="vital-card__label">Пульс (ср.)</span>
+            <span class="vital-card__value">128 <small>BPM</small></span>
+          </div>
+          <div class="vital-card__bar"><div class="fill" style="width: 75%;"></div></div>
+        </div>
+        <div class="vital-card">
+          <div class="vital-card__icon">⚡️</div>
+          <div class="vital-card__data">
+            <span class="vital-card__label">Энергия</span>
+            <span class="vital-card__value">84 <small>%</small></span>
+          </div>
+          <div class="vital-card__bar"><div class="fill" style="width: 84%;"></div></div>
+        </div>
+        <div class="vital-card">
+          <div class="vital-card__icon">🔋</div>
+          <div class="vital-card__data">
+            <span class="vital-card__label">Восстановление</span>
+            <span class="vital-card__value">92 <small>%</small></span>
+          </div>
+          <div class="vital-card__bar"><div class="fill" style="width: 92%;"></div></div>
+        </div>
+      </div>
+      <p class="vitals-note">* Данные синхронизируются с вашим носимым устройством через NEXUS API.</p>
+    </div>
+  </section>
+
+  <!-- ПЛАНЫ / ОПЛАТА -->
+  <section id="pass" class="section">
+    <div class="container">
+      <div class="section__header">
+        <div class="section__tag">[ 03 // ACCESS LEVELS ]</div>
+        <h2 class="section__title">Выбери уровень доступа</h2>
+      </div>
+      
+      <div class="plans">
+        <!-- План 1 -->
+        <div class="plan">
+          <div class="plan__header">
+            <h3>BASIC</h3>
+            <div class="plan__price">2,900 <span>₽/мес</span></div>
+          </div>
+          <ul class="plan__features">
+            <li>Доступ 8:00 - 22:00</li>
+            <li>Базовые тренажеры</li>
+            <li>1 групповое занятие / нед.</li>
+          </ul>
+          <a href="#pay" class="btn btn--glass w-100">Активировать</a>
+        </div>
+        
+        <!-- План 2 (VIP) -->
+        <div class="plan plan--pro">
+          <div class="plan__badge">PRO</div>
+          <div class="plan__header">
+            <h3>NEXUS PRO</h3>
+            <div class="plan__price">4,900 <span>₽/мес</span></div>
+          </div>
+          <ul class="plan__features">
+            <li>Круглосуточный доступ (24/7)</li>
+            <li>Все зоны и групповые</li>
+            <li>Биометрия и смарт-трекинг</li>
+            <li>1 персональная тренировка</li>
+          </ul>
+          <a href="#pay" class="btn btn--primary w-100">Активировать</a>
+        </div>
+
+        <!-- План 3 -->
+        <div class="plan">
+          <div class="plan__header">
+            <h3>ELITE</h3>
+            <div class="plan__price">7,900 <span>₽/мес</span></div>
+          </div>
+          <ul class="plan__features">
+            <li>Всё из PRO</li>
+            <li>Неограниченные PT-сессии</li>
+            <li>Массаж и SPA-зона</li>
+            <li>Персональный куратор</li>
+          </ul>
+          <a href="#pay" class="btn btn--glass w-100">Активировать</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__logo">NEXUS<span class="accent">.</span>OS</div>
+    <p>© 2026 NEXUS FITNESS. ВСЕ СИСТЕМЫ В НОРМЕ.</p>
+  </div>
+</footer>
+<section id="user-cabinet" class="section" style="display: none; padding-top: 120px;">
+    <div class="container">
+      <div class="section__header">
+        <div class="section__tag">[ 04 // USER DASHBOARD ]</div>
+        <h2 class="section__title">Система: <span class="text-gradient" id="cabinet-user-name">Гость</span></h2>
+      </div>
+      
+      <div class="cabinet-grid">
+        <!-- Профиль и тариф -->
+        <div class="cabinet-card">
+          <div class="cabinet-card__header">
+            <div class="cabinet-avatar">U</div>
+            <div>
+              <h3 id="cabinet-user-email">user@nexus.com</h3>
+              <p>Статус: <span style="color: var(--accent-green);">Активен</span></p>
+            </div>
+          </div>
+          <div class="cabinet-plan">
+            <span class="cabinet-plan__label">Текущий тариф:</span>
+            <span class="cabinet-plan__value">NEXUS PRO</span>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 5px;">Осталось дней: 24</p>
+          </div>
+          <button class="btn btn--glass w-100" onclick="logout()" style="margin-top: 20px; border-color: #ff4444; color: #ff4444;">Завершить сеанс</button>
+        </div>
+
+        <!-- Метрики пользователя -->
+        <div class="cabinet-card">
+          <h3 style="margin-bottom: 20px;">Ваши показатели</h3>
+          <div class="cabinet-stats">
+            <div class="stat-row"><span>Посещений в этом месяце:</span> <strong>12</strong></div>
+            <div class="stat-row"><span>Сожжено калорий:</span> <strong>8,450</strong></div>
+            <div class="stat-row"><span>Часов в зале:</span> <strong>18.5</strong></div>
+            <div class="stat-row"><span>Прогресс до цели:</span> <strong>65%</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- МОДАЛЬНОЕ ОКНО АВТОРИЗАЦИИ / РЕГИСТРАЦИИ -->
+  <div class="modal" id="auth">
+    <a href="#" class="modal__backdrop" onclick="closeAuth()"></a>
+    <div class="modal__card">
+      <a href="#" class="modal__close" onclick="closeAuth()">✕</a>
+      
+      <div class="auth-tabs">
+        <button class="auth-tab active" onclick="switchAuth('login')" id="tab-login">Вход</button>
+        <button class="auth-tab" onclick="switchAuth('register')" id="tab-register">Регистрация</button>
+      </div>
+
+      <!-- Форма Входа -->
+      <form id="form-login" class="modal__form" onsubmit="handleAuth(event, 'login')">
+        <h3 class="modal__title">Доступ к системе</h3>
+        <input type="email" id="login-email" class="input" placeholder="Email" required>
+        <input type="password" id="login-password" class="input" placeholder="Пароль" required>
+        <button type="submit" class="btn btn--primary w-100">Войти в NEXUS</button>
+      </form>
+
+      <!-- Форма Регистрации (скрыта) -->
+      <form id="form-register" class="modal__form" style="display: none;" onsubmit="handleAuth(event, 'register')">
+        <h3 class="modal__title">Создать аккаунт</h3>
+        <input type="text" id="reg-name" class="input" placeholder="Ваше имя" required>
+        <input type="email" id="reg-email" class="input" placeholder="Email" required>
+        <input type="password" id="reg-password" class="input" placeholder="Придумайте пароль" required>
+        <button type="submit" class="btn btn--primary w-100">Зарегистрироваться</button>
+      </form>
+    </div>
+  </div>
+
+<!-- Модальное окно оплаты -->
+<div class="modal" id="pay">
+  <a href="#pass" class="modal__backdrop"></a>
+  <div class="modal__card">
+    <a href="#pass" class="modal__close">✕</a>
+    <h3 class="modal__title">Подключение к системе</h3>
+    <p class="modal__sub">Введите данные карты для активации доступа.</p>
+    <form class="modal__form"><input type="text" class="input" placeholder="Номер карты" required>
+      <div class="row">
+        <input type="text" class="input" placeholder="ММ/ГГ" required>
+        <input type="text" class="input" placeholder="CVC" required>
+      </div>
+      <button type="submit" class="btn btn--primary w-100">Оплатить</button>
+    </form>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
